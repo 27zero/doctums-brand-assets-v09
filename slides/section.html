@@ -1,0 +1,29 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Section divider" subtitle="Dark numbered divider" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  html,body{margin:0}
+  .slide{width:1280px;height:720px;background:var(--doctums-black);color:var(--ink-inverse);position:relative;overflow:hidden;font-family:var(--font-serif)}
+  .pad{position:absolute;inset:0;padding:80px 96px;display:flex;flex-direction:column;justify-content:space-between}
+  .num{font-size:24px;color:var(--primary);font-family:var(--font-sans);font-weight:700;letter-spacing:.05em}
+  h2{font-size:76px;line-height:1.05;letter-spacing:-.02em;margin:0;font-weight:700;max-width:900px}
+  h2 em{font-style:italic;color:var(--primary)}
+  .ey{font-family:var(--font-sans);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.6)}
+  .bar{height:1px;background:rgba(255,255,255,.2);margin-top:28px}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--gradient-brand)}
+</style></head>
+<body>
+  <div class="slide">
+    <div class="stripe"></div>
+    <div class="pad">
+      <div class="num">02</div>
+      <div>
+        <div class="ey">Our approach</div>
+        <h2>Specific work,<br>measured against<br><em>real delivery.</em></h2>
+        <div class="bar"></div>
+      </div>
+      <img src="../assets/logos/logo-mono-white.png" alt="Doctums" style="height:34px;opacity:.85">
+    </div>
+  </div>
+</body></html>

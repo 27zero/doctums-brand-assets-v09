@@ -1,0 +1,36 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Content slide" subtitle="Title, body, supporting points" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  html,body{margin:0}
+  .slide{width:1280px;height:720px;background:var(--canvas);position:relative;overflow:hidden;font-family:var(--font-serif)}
+  .pad{position:absolute;inset:0;padding:72px 96px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-content:start}
+  .ey{font-family:var(--font-sans);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+  h2{font-size:48px;line-height:1.1;letter-spacing:-.02em;margin:14px 0 0;font-weight:700;color:var(--ink-primary)}
+  p{font-size:18px;line-height:1.6;color:var(--ink-secondary);max-width:60ch}
+  .items{display:flex;flex-direction:column;gap:22px;margin-top:8px}
+  .item{display:flex;gap:16px;align-items:flex-start;padding-bottom:22px;border-bottom:1px solid var(--hairline)}
+  .n{font-family:var(--font-mono);font-size:14px;color:var(--accent);flex:none;width:30px}
+  .it h3{font-size:22px;margin:0;color:var(--ink-primary)}
+  .it p{font-size:15px;margin:6px 0 0}
+  .head{position:absolute;top:72px;left:96px;right:96px;display:flex;justify-content:space-between;align-items:center}
+  .pg{font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--ink-muted)}
+</style></head>
+<body>
+  <div class="slide">
+    <div class="head"><img src="../assets/logos/logo-primary.png" style="height:26px" alt="Doctums"><span class="pg">04 / 12</span></div>
+    <div class="pad" style="top:60px;position:relative">
+      <div>
+        <div class="ey">What we do</div>
+        <h2>Four ways we move an institution forward.</h2>
+        <p style="margin-top:20px">Each engagement is scoped to how your teams actually operate — sequenced, instrumented, and owned alongside your staff, not handed over as a slide deck.</p>
+      </div>
+      <div class="items">
+        <div class="item"><span class="n">01</span><div class="it"><h3>Platform implementation</h3><p>Scalable cloud learning platforms, integrated with the systems you already run.</p></div></div>
+        <div class="item"><span class="n">02</span><div class="it"><h3>Academic transformation</h3><p>Static models become dynamic, measurable experiences without disrupting continuity.</p></div></div>
+        <div class="item" style="border:none"><span class="n">03</span><div class="it"><h3>Governance & analytics</h3><p>Outcomes instrumented end to end, on dashboards leaders trust.</p></div></div>
+      </div>
+    </div>
+  </div>
+</body></html>

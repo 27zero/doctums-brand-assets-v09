@@ -1,0 +1,201 @@
+<!-- @dsCard group="Brand" viewport="700x480" name="Photography Library" subtitle="5 directions · 89 images" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);font-family:var(--font-sans);padding:16px}
+
+  /* Tabs */
+  .tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
+  .tab{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;border-radius:var(--radius-micro);border:1px solid var(--hairline);background:var(--surface-card);color:var(--ink-muted);cursor:pointer;transition:all .15s}
+  .tab.active{background:var(--ink-primary);color:var(--ink-inverse);border-color:var(--ink-primary)}
+  .count-lbl{font-size:9px;color:var(--ink-muted);margin-left:auto;align-self:center}
+
+  /* Grid */
+  .grid{display:grid;gap:6px}
+  .cols-2{grid-template-columns:repeat(2,1fr)}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .cols-4{grid-template-columns:repeat(4,1fr)}
+  .cols-5{grid-template-columns:repeat(5,1fr)}
+
+  .thumb{position:relative;overflow:hidden;border-radius:var(--radius-base);background:var(--surface-sunken);aspect-ratio:4/3;cursor:pointer}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .thumb:hover img{transform:scale(1.04)}
+  .ov{position:absolute;inset:0;mix-blend-mode:multiply;transition:opacity .2s}
+  .cat-badge{position:absolute;bottom:4px;left:4px;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 5px;border-radius:2px;background:rgba(0,0,0,.45);color:#fff;opacity:0}
+  .thumb:hover .cat-badge{opacity:1}
+
+  /* Tweaks */
+  #tw{position:fixed;top:12px;right:12px;width:220px;background:#fff;border:1px solid var(--hairline);border-radius:var(--radius-base);box-shadow:0 8px 24px rgba(0,0,0,.12);font-family:var(--font-sans);z-index:99;display:none}
+  #tw header{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid var(--hairline)}
+  #tw h3{margin:0;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-primary)}
+  #tw .x{border:none;background:none;cursor:pointer;font-size:15px;color:var(--ink-muted);padding:0;line-height:1}
+  #tw .body{padding:10px 12px;display:flex;flex-direction:column;gap:10px}
+  .tw-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);margin-bottom:3px;display:block}
+  .tw-val{font-size:9px;color:var(--accent);float:right;font-weight:600;letter-spacing:0;text-transform:none}
+  input[type=range]{width:100%;accent-color:var(--accent);height:3px}
+  .tw-row{display:flex;gap:4px;flex-wrap:wrap}
+  .tw-btn{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 7px;border-radius:2px;border:1px solid var(--hairline);background:var(--surface-card);color:var(--ink-muted);cursor:pointer}
+  .tw-btn.on{background:var(--ink-primary);color:#fff;border-color:var(--ink-primary)}
+  .tw-toggle{display:flex;align-items:center;justify-content:space-between}
+  .toggle-pill{width:32px;height:16px;border-radius:8px;background:var(--hairline);position:relative;cursor:pointer;transition:background .15s}
+  .toggle-pill.on{background:var(--accent)}
+  .toggle-pill::after{content:'';position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background:#fff;transition:transform .15s}
+  .toggle-pill.on::after{transform:translateX(16px)}
+</style></head>
+<body>
+
+<!-- Category tabs -->
+<div class="tabs">
+  <button class="tab active" data-cat="all">All</button>
+  <button class="tab" data-cat="architecture">Architecture <span style="opacity:.5">·23</span></button>
+  <button class="tab" data-cat="movement">Movement <span style="opacity:.5">·13</span></button>
+  <button class="tab" data-cat="students">Students <span style="opacity:.5">·13</span></button>
+  <button class="tab" data-cat="practitioners">Practitioners <span style="opacity:.5">·20</span></button>
+  <button class="tab" data-cat="concept">Concept <span style="opacity:.5">·20</span></button>
+  <span class="count-lbl" id="count-lbl">89 images</span>
+</div>
+
+<div class="grid cols-4" id="grid"></div>
+
+<!-- Tweaks -->
+<div id="tw">
+  <header><h3>Tweaks</h3><button class="x" id="tw-close">×</button></header>
+  <div class="body">
+    <div>
+      <span class="tw-lbl">Columns <span class="tw-val" id="col-val">4</span></span>
+      <input type="range" id="tw-cols" min="2" max="5" step="1" value="4">
+    </div>
+    <div class="tw-toggle">
+      <span class="tw-lbl" style="margin:0">Photo overlay</span>
+      <div class="toggle-pill on" id="tw-ov"></div>
+    </div>
+    <div class="tw-toggle">
+      <span class="tw-lbl" style="margin:0">Film grade</span>
+      <div class="toggle-pill on" id="tw-grade"></div>
+    </div>
+    <div>
+      <span class="tw-lbl">Overlay opacity <span class="tw-val" id="ov-val">30%</span></span>
+      <input type="range" id="tw-opa" min="0" max="60" step="5" value="30">
+    </div>
+    <div>
+      <span class="tw-lbl">Max images shown <span class="tw-val" id="max-val">24</span></span>
+      <input type="range" id="tw-max" min="4" max="89" step="4" value="24">
+    </div>
+  </div>
+</div>
+
+<script>
+const CATS = {
+  architecture: Array.from({length:23},(_,i)=>`architecture-${String(i+1).padStart(2,'0')}.png`),
+  movement:     Array.from({length:13},(_,i)=>`movement-${String(i+1).padStart(2,'0')}.png`),
+  students:     Array.from({length:13},(_,i)=>`students-${String(i+1).padStart(2,'0')}.png`),
+  practitioners:Array.from({length:20},(_,i)=>`practitioners-${String(i+1).padStart(2,'0')}.png`),
+  concept:      Array.from({length:20},(_,i)=>`concept-${String(i+1).padStart(2,'0')}.png`),
+};
+const CAT_LABELS = {architecture:'Arch',movement:'Move',students:'Stud',practitioners:'Prac',concept:'Conc'};
+
+let state = { cat:'all', cols:4, overlay:true, grade:true, opacity:30, maxItems:24 };
+
+function getImages(){
+  if(state.cat==='all'){
+    const all=[];
+    for(const [k,v] of Object.entries(CATS)) v.forEach(f=>all.push({file:f,cat:k}));
+    return all.slice(0,state.maxItems);
+  }
+  return (CATS[state.cat]||[]).slice(0,state.maxItems).map(f=>({file:f,cat:state.cat}));
+}
+
+function render(){
+  const g=document.getElementById('grid');
+  g.className='grid cols-'+state.cols;
+  const imgs=getImages();
+  document.getElementById('count-lbl').textContent=imgs.length+' shown';
+  g.innerHTML='';
+  imgs.forEach(({file,cat})=>{
+    const d=document.createElement('div');
+    d.className='thumb';
+    const im=document.createElement('img');
+    im.src='../assets/imagery/'+file;
+    im.alt=cat;
+    im.loading='lazy';
+    if(state.grade) im.style.filter='saturate(.82) contrast(.96) brightness(1.02)';
+    const ov=document.createElement('div');
+    ov.className='ov';
+    ov.style.opacity=state.overlay?(state.opacity/100)+'':'0';
+    ov.style.background='linear-gradient(120deg,rgba(245,195,63,.9) 0%,rgba(5,182,203,.9) 100%)';
+    const badge=document.createElement('div');
+    badge.className='cat-badge';
+    badge.textContent=CAT_LABELS[cat]||cat;
+    d.appendChild(im);
+    d.appendChild(ov);
+    d.appendChild(badge);
+    g.appendChild(d);
+  });
+}
+
+// Tabs
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    state.cat=t.dataset.cat;
+    render();
+  });
+});
+
+// Tweak wires
+document.getElementById('tw-cols').addEventListener('input',e=>{
+  state.cols=+e.target.value;
+  document.getElementById('col-val').textContent=state.cols;
+  render(); set('cols',state.cols);
+});
+document.getElementById('tw-ov').addEventListener('click',function(){
+  state.overlay=!state.overlay;
+  this.classList.toggle('on',state.overlay);
+  render(); set('overlay',state.overlay);
+});
+document.getElementById('tw-grade').addEventListener('click',function(){
+  state.grade=!state.grade;
+  this.classList.toggle('on',state.grade);
+  render(); set('grade',state.grade);
+});
+document.getElementById('tw-opa').addEventListener('input',e=>{
+  state.opacity=+e.target.value;
+  document.getElementById('ov-val').textContent=state.opacity+'%';
+  render(); set('opacity',state.opacity);
+});
+document.getElementById('tw-max').addEventListener('input',e=>{
+  state.maxItems=+e.target.value;
+  document.getElementById('max-val').textContent=state.maxItems;
+  render(); set('maxItems',state.maxItems);
+});
+
+function set(k,v){window.parent.postMessage({type:'__edit_mode_set_keys',edits:{[k]:v}},'*');}
+window.addEventListener('message',e=>{
+  const d=e.data||{};
+  if(d.type==='__activate_edit_mode') document.getElementById('tw').style.display='block';
+  else if(d.type==='__deactivate_edit_mode') document.getElementById('tw').style.display='none';
+  else if(d.type==='__edit_mode_init'&&d.keys){
+    Object.assign(state,d.keys);
+    document.getElementById('tw-cols').value=state.cols;
+    document.getElementById('col-val').textContent=state.cols;
+    document.getElementById('tw-opa').value=state.opacity;
+    document.getElementById('ov-val').textContent=state.opacity+'%';
+    document.getElementById('tw-max').value=state.maxItems;
+    document.getElementById('max-val').textContent=state.maxItems;
+    document.getElementById('tw-ov').classList.toggle('on',state.overlay);
+    document.getElementById('tw-grade').classList.toggle('on',state.grade);
+    render();
+  }
+});
+document.getElementById('tw-close').addEventListener('click',()=>{
+  document.getElementById('tw').style.display='none';
+  window.parent.postMessage({type:'__edit_mode_dismissed'},'*');
+});
+window.parent.postMessage({type:'__edit_mode_available'},'*');
+
+render();
+</script>
+</body></html>

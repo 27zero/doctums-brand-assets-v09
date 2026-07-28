@@ -1,0 +1,36 @@
+/* Doctums — Typography scale
+   Swiss / Bauhaus hierarchy: dramatic 2x–4x jumps, not linear.
+   Serif (Georgia) for editorial impact + reading; Montserrat for UI/labels.
+   Display & headline carry -0.02em tracking; caption/overline +0.1em uppercase. */
+:root {
+  /* Font sizes */
+  --text-display: 64px;
+  --text-headline: 48px;
+  --text-title: 32px;     /* subheadline */
+  --text-h4: 24px;
+  --text-h5: 20px;
+  --text-lead: 18px;
+  --text-body: 16px;
+  --text-body-sm: 14px;
+  --text-caption: 12px;
+  --text-overline: 11px;
+
+  /* Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Line heights */
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+
+  /* Tracking */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.1em;
+
+  /* Reading measure — never exceed ~65ch */
+  --measure: 65ch;
+}

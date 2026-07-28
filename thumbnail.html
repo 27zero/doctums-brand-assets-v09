@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles.css">
+<style>
+html,body{margin:0;height:100%}
+.tile{display:flex;width:1280px;height:854px;overflow:hidden}
+.main{flex:0 0 75%;background:var(--doctums-yellow);display:flex;align-items:center;justify-content:center}
+.main img{width:62%;height:auto}
+.strip{flex:1;display:flex;flex-direction:column}
+.strip span{flex:1}
+</style>
+</head>
+<body>
+<div class="tile">
+<div class="main"><img src="assets/logos/logo-mono-black.png" alt="Doctums"></div>
+<div class="strip">
+<span style="background:#05B6CB"></span>
+<span style="background:#E6007E"></span>
+<span style="background:#D8443A"></span>
+<span style="background:#1E1E1E"></span>
+</div>
+</div>
+<template id="__bundler_thumbnail" data-bg-color="#FFD200">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#FFD200"/>
+<text x="450" y="440" font-family="Georgia,serif" font-size="220" font-weight="700" text-anchor="middle" fill="#1E1E1E">D</text>
+<rect x="900" y="0" width="75" height="200" fill="#05B6CB"/>
+<rect x="900" y="200" width="75" height="200" fill="#E6007E"/>
+<rect x="900" y="400" width="75" height="200" fill="#D8443A"/>
+<rect x="900" y="600" width="75" height="200" fill="#1E1E1E"/>
+</svg>
+</template>
+</body>
+</html>

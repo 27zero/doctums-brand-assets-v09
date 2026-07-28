@@ -1,0 +1,29 @@
+<!-- @dsCard group="Brand" viewport="700x320" name="Golden Canon Grid" subtitle="The structural backbone of every layout" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--canvas);padding:24px;font-family:var(--font-serif)}
+  .stage{position:relative;aspect-ratio:16/9;background:var(--surface-card);border:var(--border-hairline);border-radius:var(--radius-base);overflow:hidden}
+  .ov{position:absolute;inset:0;opacity:.22;pointer-events:none}
+  .ov .fr{position:absolute;inset:0;border:1px solid var(--accent)}
+  .ov .v{position:absolute;top:0;bottom:0;width:1px;background:var(--accent)}
+  .ov .h{position:absolute;left:0;right:0;height:1px;background:var(--accent)}
+  .content{position:absolute;left:38.2%;top:24px;right:24px}
+  .ey{font-family:var(--font-sans);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+  .ti{font-size:34px;font-weight:700;letter-spacing:-.02em;color:var(--ink-primary);margin-top:6px;line-height:1.1}
+</style></head>
+<body>
+  <div class="stage">
+    <div class="content"><div class="ey">Mathematical rigor</div><div class="ti">Content anchored<br>to the intersections.</div></div>
+    <svg class="ov" viewBox="0 0 100 56" preserveAspectRatio="none">
+      <rect x="0.5" y="0.5" width="99" height="55" fill="none" stroke="var(--accent)" stroke-width="0.25"/>
+      <line x1="38.2" y1="0" x2="38.2" y2="56" stroke="var(--accent)" stroke-width="0.25"/>
+      <line x1="61.8" y1="0" x2="61.8" y2="56" stroke="var(--accent)" stroke-width="0.25"/>
+      <line x1="0" y1="21.4" x2="100" y2="21.4" stroke="var(--accent)" stroke-width="0.25"/>
+      <line x1="0" y1="34.6" x2="100" y2="34.6" stroke="var(--accent)" stroke-width="0.25"/>
+      <line x1="0" y1="0" x2="100" y2="56" stroke="var(--accent)" stroke-width="0.18"/>
+      <line x1="100" y1="0" x2="0" y2="56" stroke="var(--accent)" stroke-width="0.18"/>
+    </svg>
+  </div>
+</body></html>

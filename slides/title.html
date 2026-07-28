@@ -1,0 +1,39 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Title slide" subtitle="Cover lockup" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  html,body{margin:0}
+  .slide{width:1280px;height:720px;background:var(--canvas);position:relative;overflow:hidden;font-family:var(--font-serif)}
+  .pad{position:absolute;inset:0;padding:80px 96px;display:flex;flex-direction:column;justify-content:space-between}
+  .top{display:flex;justify-content:space-between;align-items:flex-start}
+  .ey{font-family:var(--font-sans);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+  h1{font-size:88px;line-height:1.05;letter-spacing:-.02em;margin:0;color:var(--ink-primary);font-weight:700}
+  h1 em{font-style:italic}
+  .sub{font-size:22px;line-height:1.5;color:var(--ink-secondary);max-width:680px;margin-top:24px}
+  .foot{font-family:var(--font-sans);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-muted)}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--primary);display:inline-block;margin-right:10px;vertical-align:middle}
+  .grid{position:absolute;right:-80px;top:-80px;width:560px;height:560px;opacity:.5}
+</style></head>
+<body>
+  <div class="slide">
+    <svg class="grid" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line x1="38.2" y1="0" x2="38.2" y2="100" stroke="var(--accent)" stroke-width="0.2"/>
+      <line x1="61.8" y1="0" x2="61.8" y2="100" stroke="var(--accent)" stroke-width="0.2"/>
+      <line x1="0" y1="38.2" x2="100" y2="38.2" stroke="var(--accent)" stroke-width="0.2"/>
+      <line x1="0" y1="0" x2="100" y2="100" stroke="var(--primary)" stroke-width="0.2"/>
+    </svg>
+    <div class="pad">
+      <div class="top">
+        <img src="../assets/logos/logo-primary.png" alt="Doctums" style="height:40px">
+        <span class="ey">Brand Presentation · 2026</span>
+      </div>
+      <div>
+        <div class="ey" style="margin-bottom:18px">Higher Education Consulting</div>
+        <h1>Digital learning,<br>built for how<br>institutions <em>run.</em></h1>
+        <p class="sub">Advanced cloud learning ecosystems for institutions, educators, and students across the region.</p>
+      </div>
+      <div class="foot"><span class="dot"></span>Doctums · Confidential</div>
+    </div>
+  </div>
+</body></html>

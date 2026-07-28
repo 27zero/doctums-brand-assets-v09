@@ -1,0 +1,47 @@
+/* Doctums — Spacing, radii, elevation, layout
+   8px base grid. Whitespace is a functional design element. */
+:root {
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --space-2xl: 96px;
+  --space-section: 144px;
+
+  /* Radii — small, architectural. No pills. */
+  --radius-none: 0px;
+  --radius-micro: 2px;   /* inputs */
+  --radius-base: 4px;    /* buttons, cards */
+
+  /* Hairline borders */
+  --border-hairline: 1px solid var(--hairline);
+  --border-hairline-strong: 1px solid var(--hairline-strong);
+
+  /* Elevation — flat at rest. Shadow is tactile confirmation only. */
+  --elevation-rest: none;
+  --elevation-interactive: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --elevation-overlay: 0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 2px var(--border-focus);
+
+  /* Layout */
+  --container-max: 1440px;
+  --content-max: 1200px;
+  --gutter: 24px;
+  --gutter-mobile: 16px;
+
+  /* Motion — sober, performance-first */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --duration-fast: 120ms; /* @kind other */
+  --duration-base: 200ms; /* @kind other */
+}
+
+@media (max-width: 767px) {
+  :root {
+    --space-2xl: 48px;
+    --gutter: 16px;
+  }
+}

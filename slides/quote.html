@@ -1,0 +1,26 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Quote slide" subtitle="Big editorial pull-quote" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  html,body{margin:0}
+  .slide{width:1280px;height:720px;background:var(--canvas);position:relative;overflow:hidden;font-family:var(--font-serif);display:flex;align-items:center}
+  .pad{padding:0 140px;max-width:1000px}
+  .mark{font-size:120px;line-height:.6;color:var(--primary);font-weight:700}
+  blockquote{font-size:46px;line-height:1.3;letter-spacing:-.01em;margin:20px 0 0;color:var(--ink-primary)}
+  blockquote em{font-style:italic;color:var(--accent)}
+  .by{font-family:var(--font-sans);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-muted);margin-top:36px}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--gradient-brand)}
+  .logo{position:absolute;bottom:56px;right:96px;height:30px;opacity:.6}
+</style></head>
+<body>
+  <div class="slide">
+    <div class="stripe"></div>
+    <div class="pad">
+      <div class="mark">"</div>
+      <blockquote>Doctums rebuilt our enrollment flow around how our registrar <em>actually works.</em> We cut the cycle by more than a third in one term.</blockquote>
+      <div class="by">Vicerrectoría Académica · Regional University</div>
+    </div>
+    <img class="logo" src="../assets/logos/logo-primary.png" alt="Doctums">
+  </div>
+</body></html>

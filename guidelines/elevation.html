@@ -1,0 +1,15 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Elevation" subtitle="Flat at rest; shadow on interaction" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--canvas);padding:28px;font-family:var(--font-sans);display:flex;gap:28px}
+  .item{text-align:center}
+  .box{width:150px;height:80px;background:var(--surface-card);border:var(--border-hairline);border-radius:var(--radius-base)}
+  .lbl{font-family:var(--font-mono);font-size:11px;color:var(--ink-muted);margin-top:10px}
+</style></head>
+<body>
+  <div class="item"><div class="box" style="box-shadow:var(--elevation-rest)"></div><div class="lbl">rest · none</div></div>
+  <div class="item"><div class="box" style="box-shadow:var(--elevation-interactive)"></div><div class="lbl">interactive · hover</div></div>
+  <div class="item"><div class="box" style="box-shadow:var(--elevation-overlay)"></div><div class="lbl">overlay · dialogs</div></div>
+</body></html>

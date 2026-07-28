@@ -1,0 +1,392 @@
+# Doctums Design System — Machine-readable manifest
+# Version: BETA · Generated: 2026-06-23
+# Use this file to seed the design system in another account, CI pipeline,
+# code-gen tool, or design token transformer (e.g. Style Dictionary).
+
+meta:
+  name: Doctums
+  version: BETA
+  namespace: DoctumsDesignSystem_9e6b2a
+  description: >
+    EdTech / Higher Education Consulting. Elite consultancy aesthetic:
+    living editorial document, Golden Canon Grid, flat elevation, Swiss/Bauhaus
+    type hierarchy, warm-paper canvas. One light mode only.
+  tagline: Higher Education Consulting
+  figma_source: "PRUEBA_system1 - brand guidelines DOCTUMS.fig (48-frame brand book)"
+  skill_file: SKILL.md
+
+# ─────────────────────────────────────────────
+# COLORS
+# ─────────────────────────────────────────────
+colors:
+  # Brand & action
+  primary:        { value: "#F5C33F", name: "Doctums Yellow", usage: "CTAs only" }
+  on_primary:     { value: "#1E1E1E", name: "Doctums Black",  usage: "Text on primary" }
+  accent:         { value: "#05B6CB", name: "Marine Blue",    usage: "Links, hover, focus rings" }
+  on_accent:      { value: "#1E1E1E", name: "Doctums Black",  usage: "Text on accent" }
+
+  # Surfaces & bounds
+  canvas:         { value: "#FCFDFE", name: "Paper",          usage: "Page background" }
+  surface_card:   { value: "#FFFFFF", name: "White",          usage: "Content cards" }
+  surface_sunken: { value: "#F5F5F5", name: "Gray 100",       usage: "Disabled, sunken inputs" }
+  surface_inverse:{ value: "#1E1E1E", name: "Doctums Black",  usage: "Inverse dark sections" }
+  hairline:       { value: "#EAEAEA", name: "Gray 200",       usage: "Borders, dividers" }
+
+  # Ink / text
+  ink_primary:    { value: "#1E1E1E", usage: "All reading text, headings" }
+  ink_secondary:  { value: "#565656", usage: "Supporting text" }
+  ink_muted:      { value: "#797979", usage: "Captions, labels, metadata" }
+  ink_inverse:    { value: "#FFFFFF", usage: "Text on dark surfaces / photos" }
+  link:           { value: "#05B6CB", usage: "Inline links" }
+
+  # Neutrals
+  gray_900: "#1E1E1E"
+  gray_700: "#494949"
+  gray_600: "#565656"
+  gray_500: "#797979"
+  gray_400: "#999999"
+  gray_300: "#C7C7C7"
+  gray_200: "#EAEAEA"
+  gray_150: "#EEEEEE"
+  gray_100: "#F5F5F5"
+
+  # Status
+  signal_green:   { value: "#0B8250", usage: "Success" }
+  signal_red:     { value: "#D8443A", usage: "Error, destructive" }
+  magenta:        { value: "#E6007E", usage: "Co-branding editorial accent" }
+
+  # Gradient
+  gradient_brand:
+    value: "linear-gradient(120deg, #F5C33F 0%, #05B6CB 100%)"
+    usage: "Accent stripe, CTA wash (12%), slide decoration"
+  gradient_photo_overlay:
+    value: "linear-gradient(120deg, rgba(245,195,63,0.30) 0%, rgba(5,182,203,0.30) 100%)"
+    usage: "Photography overlay at 30% opacity, multiply blend"
+
+  rules:
+    - "AAA contrast always: dark ink only on Primary and Accent — never white-on-yellow"
+    - "One light mode only. Dark mode is out of scope."
+    - "Primary (yellow) is exclusive to CTAs. Accent (cyan) for links/hover/focus only."
+
+# ─────────────────────────────────────────────
+# TYPOGRAPHY
+# ─────────────────────────────────────────────
+typography:
+  families:
+    serif:
+      name: Georgia
+      fallback: "'Gelasio', 'Times New Roman', serif"
+      google_font: "Gelasio"         # cross-platform metric-compatible substitute
+      usage: "Display, headline, body reading"
+    sans:
+      name: Montserrat
+      google_font: "Montserrat"
+      weights: [400, 500, 600, 700]
+      usage: "UI labels, navigation, captions"
+    mono:
+      name: Cousine
+      google_font: "Cousine"
+      usage: "Code, tokens, tabular data"
+
+  scale:
+    display:
+      family: serif
+      size: "64px"
+      weight: 700
+      line_height: 1.15
+      letter_spacing: "-0.02em"
+      usage: "Hero titles, cover slides"
+    headline:
+      family: serif
+      size: "48px"
+      weight: 700
+      line_height: 1.15
+      letter_spacing: "-0.02em"
+    title:
+      family: sans
+      size: "32px"
+      weight: 600
+      line_height: 1.15
+      letter_spacing: "0"
+      css_class: dt-title
+    h4:
+      family: serif
+      size: "24px"
+      weight: 700
+      line_height: 1.3
+    body:
+      family: serif
+      size: "16px"
+      weight: 400
+      line_height: 1.6
+      letter_spacing: "0"
+      max_measure: "65ch"
+      css_class: dt-body
+    caption:
+      family: sans
+      size: "12px"
+      weight: 600
+      text_transform: uppercase
+      letter_spacing: "0.1em"
+      css_class: dt-caption
+    overline:
+      family: sans
+      size: "11px"
+      weight: 600
+      text_transform: uppercase
+      letter_spacing: "0.1em"
+      css_class: dt-overline
+    mono:
+      family: mono
+      size: "14px"
+      css_class: dt-mono
+
+  principles:
+    - "Swiss / Bauhaus: dramatic 2×–4× jumps, never a linear ramp"
+    - "Georgia for editorial impact + reading; Montserrat for UI/labels"
+    - "Display + headline: -0.02em tracking (newspaper masthead compression)"
+    - "Caption/overline: uppercase Montserrat with +0.1em tracking"
+    - "Body lines never exceed ~65ch"
+
+# ─────────────────────────────────────────────
+# SPACING
+# ─────────────────────────────────────────────
+spacing:
+  base: 8px
+  scale:
+    xs:      "4px"
+    sm:      "8px"
+    md:      "16px"
+    lg:      "24px"
+    xl:      "48px"
+    "2xl":   "96px"     # collapses to 48px on mobile
+    section: "144px"
+  container_max: "1440px"
+  content_max:   "1200px"
+  gutter:        "24px"
+  gutter_mobile: "16px"
+  note: "Everything anchored to the Golden Canon Grid (golden-section intersections, φ = 0.618)"
+
+# ─────────────────────────────────────────────
+# RADII
+# ─────────────────────────────────────────────
+radii:
+  none:  "0px"
+  micro: "2px"    # inputs
+  base:  "4px"    # cards, buttons
+  rules:
+    - "Never pills, never circles (avatars are square with micro radius)"
+    - "No large radius; architectural, not friendly"
+
+# ─────────────────────────────────────────────
+# ELEVATION
+# ─────────────────────────────────────────────
+elevation:
+  rest:        "none"
+  interactive: "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)"
+  overlay:     "0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06)"
+  focus_ring:  "0 0 0 2px #05B6CB"
+  rules:
+    - "Flat by default. Shadow is tactile confirmation only (hover/focus)."
+    - "No glassmorphism, no skeuomorphism, no glows."
+    - "Interactive cards lift -2px translateY + interactive shadow on hover."
+
+# ─────────────────────────────────────────────
+# MOTION
+# ─────────────────────────────────────────────
+motion:
+  ease: "cubic-bezier(0.2, 0, 0, 1)"
+  duration_fast: "120ms"
+  duration_base: "200ms"
+  principles:
+    - "Sober and performance-first"
+    - "Fades and lifts only — no bounces, no infinite decorative loops"
+
+# ─────────────────────────────────────────────
+# LOGO
+# ─────────────────────────────────────────────
+logo:
+  assets_dir: "assets/logos/"
+  masters:
+    primary:     "logo-primary.svg"     # dark wordmark + yellow sun, transparent bg
+    white:       "logo-white.svg"       # white wordmark + sun, transparent bg
+    mark:        "logo-mark.svg"        # isolated sun seal only
+    services_1:  "logo-services-1line.svg"
+    services_2:  "logo-services-2lines.svg"
+
+  official_variants:
+    "01": { name: "Primary",    file: "logo-primary.svg",  background: "light" }
+    "02": { name: "Reverse",    file: "logo-white.svg",    background: "dark"  }
+    "03": { name: "On Yellow",  file: "logo-primary.svg",  background: "yellow" }
+    "04": { name: "Mono Black", file: "logo-primary.svg",  background: "light" }
+    "05": { name: "Mono White", file: "logo-white.svg",    background: "dark"  }
+    "06": { name: "On Cyan",    file: "logo-white.svg",    background: "cyan"  }
+
+  proportions:
+    hero:           "50vw"
+    standard:       "20–25vw"
+    landscape_min:  "10–15vw"
+
+  minimums:
+    tagged_lockup_width: "160px"
+    main_lockup_height:  "80px"
+    symbol_favicon:      "16px"
+    symbol_app_icon:     "32px"
+    tagline_drop_screen: "10px"
+    tagline_drop_print:  "6pt"
+
+  clear_space: "1× exact height of the Doctums sun symbol at current scale"
+
+  donts:
+    - "Never distort, stretch, or rotate"
+    - "Never add drop-shadows, glows, or 3D effects"
+    - "Never alter wordmark↔symbol spacing"
+    - "Never place on low-contrast, busy, or non-approved-color backgrounds"
+    - "Never recolor the master palette"
+    - "Never re-typeset, translate, or re-align the tagline"
+
+# ─────────────────────────────────────────────
+# PHOTOGRAPHY
+# ─────────────────────────────────────────────
+photography:
+  treatment:
+    grade:    "saturate(0.82) contrast(0.96) brightness(1.02)"
+    overlay:  "gradient_photo_overlay at 30% opacity, multiply blend"
+    feel:     "Warm desaturated, low-contrast, Kodak Portra 400 film aesthetic"
+  component: "PhotoFrame"
+
+  directions:
+    architecture:
+      files: "assets/imagery/architecture-01..23"
+      count: 23
+      notes: "Bridges, concrete, glass façades, geometric abstraction"
+    movement:
+      files: "assets/imagery/movement-01..13"
+      count: 13
+      notes: "Motion-blur crowds, campus plazas, stairs"
+    students:
+      files: "assets/imagery/students-01..13"
+      count: 13
+      notes: "Corridors, interiors, enrollment and service scenes"
+    practitioners:
+      files: "assets/imagery/practitioners-01..20"
+      count: 20
+      notes: "Teams with plans/screens, data-ops rooms, whiteboard sessions"
+    concept:
+      files: "assets/imagery/concept-01..20"
+      count: 20
+      notes: "Abstract/conceptual AI-generated imagery"
+
+  rules:
+    - "Always candid / editorial-documentary — never posed single-hero shots"
+    - "Multiple diverse people in frame"
+    - "Apply PhotoFrame treatment to all imagery for visual consistency"
+
+# ─────────────────────────────────────────────
+# COMPONENTS (bundle: _ds_bundle.js)
+# ─────────────────────────────────────────────
+components:
+  bundle_path: "_ds_bundle.js"
+  namespace:   "DoctumsDesignSystem_9e6b2a"
+
+  core:
+    Button:
+      variants: [primary, secondary, ghost, link]
+      sizes: [sm, md, lg]
+      props: [variant, size, disabled, fullWidth, iconLeft, iconRight]
+    Card:
+      props: [interactive, padding, as]
+      note: "Flat at rest; hover lifts -2px + interactive shadow when interactive=true"
+    Badge:
+      tones: [neutral, primary, accent, success, danger]
+      variants: [solid, soft]
+    Tag:
+      props: [active, onRemove]
+
+  forms:
+    Input:   { props: [label, hint, error], height: "48px", focus: "2px Marine Blue border" }
+    Select:  { props: [label, hint], height: "48px" }
+    Checkbox:{ props: [label, checked, defaultChecked, disabled] }
+    Switch:  { props: [label, checked, defaultChecked, disabled, onChange] }
+
+  navigation:
+    Tabs:
+      props: [tabs, value, defaultValue, onChange]
+      note: "Underline style; active tab = Marine Blue 2px rule"
+
+  data:
+    Stat:   { props: [value, label, accent, sub], note: "Serif numeral + uppercase caption" }
+    Avatar: { props: [name, src, size], note: "Square with micro radius — never circular" }
+
+  brand:
+    Logo:
+      props: [variant, background, height, width, clearSpace, assetBase]
+      background_shortcuts: [light, dark, yellow, cyan]
+    PhotoFrame:
+      props: [src, alt, ratio, overlay, grade, caption, radius]
+    GoldenCanonGrid:
+      props: [color, opacity, diagonals, showThirds]
+
+# ─────────────────────────────────────────────
+# UI KITS
+# ─────────────────────────────────────────────
+ui_kits:
+  website:
+    path: "ui_kits/website/index.html"
+    description: "Editorial marketing homepage (hero, services, proof, insights, CTA, footer)"
+  platform:
+    path: "ui_kits/platform/index.html"
+    description: "Institution admin dashboard (programs table, stat row, enrollment chart, activity)"
+
+# ─────────────────────────────────────────────
+# SLIDES (1280×720)
+# ─────────────────────────────────────────────
+slides:
+  title:   "slides/title.html"
+  section: "slides/section.html"
+  content: "slides/content.html"
+  quote:   "slides/quote.html"
+  data:    "slides/data.html"
+  photo:   "slides/photo.html"
+
+# ─────────────────────────────────────────────
+# CONTENT VOICE (quick ref)
+# ─────────────────────────────────────────────
+voice:
+  person: "We (Doctums) → you/your institution"
+  tone: "Calm confidence grounded in real delivery"
+  principles:
+    - "Practitioner-led: real-world delivery perspective, not theory"
+    - "Specific over vague: concrete examples, defined terms, clear risks"
+    - "Practical over aspirational: actionable steps, not slogans"
+    - "Evidence-based claims: no hype, no exaggerated guarantees"
+    - "Technically fluent: show real understanding of institutional operations"
+  casing: "Sentence case for headlines; UPPERCASE for labels/captions"
+  emoji: false
+  examples:
+    headline: "Digital learning, built for how institutions actually run."
+    section:  "Specific work, measured against real delivery."
+    cta:      "Tell us where the friction is. We'll come back with a specific, sequenced read — no hype, no boilerplate."
+  avoid: ["Revolutionize", "cutting-edge", "AI-powered", "disruption", "seamless", "world-class"]
+
+# ─────────────────────────────────────────────
+# INSTALLATION
+# ─────────────────────────────────────────────
+installation:
+  link_styles: |
+    <link rel="stylesheet" href="path/to/styles.css">
+  load_bundle: |
+    <script src="path/to/_ds_bundle.js"></script>
+  use_components: |
+    const { Button, Card, Badge, Input, Stat, Logo, PhotoFrame } =
+      window.DoctumsDesignSystem_9e6b2a;
+  react_deps:
+    react: "18.3.1"
+    react_dom: "18.3.1"
+    babel_standalone: "7.29.0"
+  notes:
+    - "Copy the full project folder to get assets, tokens, components, and kits"
+    - "styles.css is the single entry point — it @imports all token files"
+    - "_ds_bundle.js is auto-generated; do not edit it manually"
+    - "Font substitution: Georgia (system) + Gelasio/Montserrat/Cousine (Google)"
+    - "See SKILL.md for use with Claude Agent Skills"

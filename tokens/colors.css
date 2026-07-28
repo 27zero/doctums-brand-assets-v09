@@ -1,0 +1,56 @@
+/* Doctums — Color tokens
+   Single light "paper editorial" mode. Dark mode is explicitly out of scope.
+   Base palette → semantic aliases. WCAG AAA: dark ink only on Primary/Accent. */
+:root {
+  /* ---- Base palette ---- */
+  --doctums-yellow: #F5C33F;   /* Primary — CTAs only */
+  --doctums-yellow-soft: #FFBF44;
+  --marine-blue: #05B6CB;      /* Accent — links, focus, hover */
+  --marine-blue-ink: #08B7CA;
+  --doctums-black: #1E1E1E;    /* Ink primary */
+  --true-black: #000000;
+  --white: #FFFFFF;
+  --paper: #FCFDFE;            /* Canvas */
+  --cream: #FDF4DC;            /* Warm tint surface (rare) */
+
+  /* Neutrals */
+  --gray-900: #1E1E1E;
+  --gray-700: #494949;
+  --gray-600: #565656;
+  --gray-500: #797979;
+  --gray-400: #999999;
+  --gray-300: #C7C7C7;
+  --gray-200: #EAEAEA;
+  --gray-150: #EEEEEE;
+  --gray-100: #F5F5F5;
+
+  /* Support / status (used sparingly, from brand book strokes) */
+  --magenta: #E6007E;          /* Co-branding / editorial accent */
+  --signal-red: #D8443A;       /* Errors, "don't" markers */
+  --signal-green: #0B8250;     /* Success */
+
+  /* Official gradient (golden → cyan) */
+  --gradient-brand: linear-gradient(120deg, #F5C33F 0%, #05B6CB 100%); /* @kind color */
+  --gradient-photo-overlay: linear-gradient(120deg, rgba(245,195,63,0.30) 0%, rgba(5,182,203,0.30) 100%); /* @kind color */
+
+  /* ---- Semantic aliases ---- */
+  --canvas: var(--paper);
+  --surface-card: var(--white);
+  --surface-sunken: var(--gray-100);
+  --surface-inverse: var(--doctums-black);
+
+  --primary: var(--doctums-yellow);
+  --on-primary: var(--doctums-black);
+  --accent: var(--marine-blue);
+  --on-accent: var(--doctums-black);
+
+  --ink-primary: var(--doctums-black);
+  --ink-secondary: var(--gray-600);
+  --ink-muted: var(--gray-500);
+  --ink-inverse: var(--white);
+  --link: var(--marine-blue);
+
+  --hairline: var(--gray-200);
+  --hairline-strong: var(--gray-300);
+  --border-focus: var(--marine-blue);
+}

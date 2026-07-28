@@ -1,0 +1,82 @@
+/* Doctums — base element styles + typography utility classes.
+   Opt-in classes keep the editorial type system consistent across surfaces. */
+
+.dt-display {
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-primary);
+}
+.dt-headline {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-primary);
+}
+.dt-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-title);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  color: var(--ink-primary);
+}
+.dt-h4 {
+  font-family: var(--font-serif);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  color: var(--ink-primary);
+}
+.dt-lead {
+  font-family: var(--font-serif);
+  font-size: var(--text-lead);
+  line-height: var(--leading-normal);
+  color: var(--ink-secondary);
+}
+.dt-body {
+  font-family: var(--font-serif);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--ink-primary);
+  max-width: var(--measure);
+}
+.dt-body-sm {
+  font-family: var(--font-serif);
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-normal);
+  color: var(--ink-secondary);
+}
+.dt-caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-muted);
+}
+.dt-overline {
+  font-family: var(--font-sans);
+  font-size: var(--text-overline);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-muted);
+}
+.dt-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-normal);
+  color: var(--ink-primary);
+}
+
+a.dt-link, .dt-link {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--link) 35%, transparent);
+  transition: border-color var(--duration-base) var(--ease-standard);
+}
+a.dt-link:hover, .dt-link:hover { border-bottom-color: var(--link); }

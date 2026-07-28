@@ -1,0 +1,19 @@
+/* Doctums — Logo guideline tokens (Design System BETA)
+   Concrete size/space heuristics from the brand book. The logo is the
+   structural anchor; its integrity is non-negotiable. */
+:root {
+  /* Proportional weight on the canvas (share of total width) */
+  --logo-proportion-hero: 50vw;        /* Hero / covers, aligned to Golden Canon intersections */
+  --logo-proportion-standard: 22vw;    /* Documents / stationery: 20–25vw */
+  --logo-proportion-landscape-min: 12vw; /* Landscape: never below 10–15vw */
+
+  /* Hard minimums */
+  --logo-min-width-tagline: 160px;     /* Below this (or tagline cap-height <10px screen / 6pt print) → drop tagline */
+  --logo-min-height-lockup: 80px;      /* Main lockup, no tagline */
+  --logo-tagline-drop-threshold: 10px; /* Tagline font height on screen */
+  --logo-min-symbol-favicon: 16px;     /* Symbol-only (sun) for favicons */
+  --logo-min-symbol-app-icon: 32px;    /* Symbol-only for app icons */
+
+  /* Clear space = 1× the exact height of the Doctums sun symbol at current scale */
+  --logo-clear-space-ratio: 1;
+}

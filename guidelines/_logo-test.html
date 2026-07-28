@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--canvas);font-family:var(--font-sans)}
+  .row{display:flex;gap:0;flex-wrap:wrap}
+  .tile{width:200px;height:100px;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;border:1px solid rgba(0,0,0,.06)}
+  img{max-height:44px;max-width:90%}
+  .lbl{text-align:center;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-muted);padding:4px 0 14px}
+</style></head>
+<body>
+  <div class="row">
+    <div>
+      <div class="tile" style="background:var(--canvas)"><img src="../assets/logos/logo-primary.svg" alt="Doctums"></div>
+      <div class="lbl">primary · canvas</div>
+    </div>
+    <div>
+      <div class="tile" style="background:#fff"><img src="../assets/logos/logo-primary.svg" alt="Doctums"></div>
+      <div class="lbl">primary · white</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--primary)"><img src="../assets/logos/logo-primary.svg" alt="Doctums"></div>
+      <div class="lbl">primary · yellow</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--doctums-black)"><img src="../assets/logos/logo-white.svg" alt="Doctums"></div>
+      <div class="lbl">white · black</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--accent)"><img src="../assets/logos/logo-white.svg" alt="Doctums"></div>
+      <div class="lbl">white · cyan</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--gradient-brand)"><img src="../assets/logos/logo-white.svg" alt="Doctums"></div>
+      <div class="lbl">white · gradient</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--canvas)"><img src="../assets/logos/logo-black.svg" alt="Doctums"></div>
+      <div class="lbl">mono-black · canvas</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--canvas)"><img src="../assets/logos/logo-primary-tag.svg" alt="Doctums"></div>
+      <div class="lbl">primary + tagline</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--doctums-black)"><img src="../assets/logos/logo-white-tag.svg" alt="Doctums"></div>
+      <div class="lbl">white + tagline</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--canvas)"><img src="../assets/logos/logo-black-tag.svg" alt="Doctums"></div>
+      <div class="lbl">mono-black + tagline</div>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,150 @@
+<!-- @dsCard group="Brand" viewport="700x420" name="Logo Lockups" subtitle="4 official masters + extensions" -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--canvas);padding:20px;font-family:var(--font-sans)}
+
+  /* ── Official 4 ── */
+  .official{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px}
+  .card-main{border-radius:var(--radius-base);overflow:hidden;border:1px solid transparent}
+  .card-main .bg{height:96px;display:flex;align-items:center;justify-content:center;padding:16px}
+  .card-main .meta{padding:8px 12px;border-top:1px solid rgba(255,255,255,.12)}
+  .card-main.light .meta{border-top-color:var(--hairline);background:var(--surface-card)}
+  .card-main.dark  .meta{background:color-mix(in srgb,#000 60%,transparent)}
+  .card-main img{max-height:44px;max-width:88%}
+  .name{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+  .card-main.light .name{color:var(--ink-primary)}
+  .card-main.dark  .name{color:rgba(255,255,255,.85)}
+  .use{font-size:9.5px;color:var(--ink-muted);margin-top:2px}
+  .card-main.dark .use{color:rgba(255,255,255,.45)}
+  .tag{display:inline-block;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:1px 5px;border-radius:2px;margin-left:4px;vertical-align:middle}
+  .t-tag{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+
+  /* ── Extensions ── */
+  .ext-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-muted);margin-bottom:8px}
+  .ext-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .ext-tile{border:1px solid var(--hairline);border-radius:var(--radius-base);height:60px;display:flex;align-items:center;justify-content:center;padding:10px;background:var(--surface-card)}
+  .ext-tile img{max-height:32px;max-width:88%}
+  .ext-lbl2{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-muted);margin-top:4px}
+
+  /* Tweaks */
+  #tw{position:fixed;top:12px;right:12px;width:240px;background:#fff;border:1px solid var(--hairline);border-radius:var(--radius-base);box-shadow:var(--elevation-overlay);font-family:var(--font-sans);z-index:99;display:none}
+  #tw header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--hairline)}
+  #tw h3{margin:0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-primary)}
+  #tw .x{border:none;background:none;cursor:pointer;font-size:16px;color:var(--ink-muted);padding:0}
+  #tw .body{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+  #tw label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);margin-bottom:4px}
+  #tw .val{font-family:var(--font-mono);font-size:10px;color:var(--accent);float:right;text-transform:none;letter-spacing:0}
+  #tw input[type=range]{width:100%;accent-color:var(--accent)}
+  #tw select{width:100%;height:30px;border:1px solid var(--hairline);border-radius:var(--radius-micro);font-size:11px;padding:0 6px}
+</style></head>
+<body>
+
+<!-- Official 4 -->
+<div class="official">
+  <!-- 1: Primary · light -->
+  <div class="card-main light" style="border-color:var(--hairline)">
+    <div class="bg" style="background:#fff">
+      <img src="../assets/logos/logo-primary.png" alt="Doctums" id="i1">
+    </div>
+    <div class="meta">
+      <div class="name">Primary · Dark</div>
+      <div class="use">White / Canvas / Yellow backgrounds</div>
+    </div>
+  </div>
+  <!-- 2: Primary White · dark -->
+  <div class="card-main dark">
+    <div class="bg" style="background:var(--doctums-black)">
+      <img src="../assets/logos/logo-mono-white.png" alt="Doctums" id="i2">
+    </div>
+    <div class="meta">
+      <div class="name">Primary · White</div>
+      <div class="use">Dark / Cyan / Gradient backgrounds</div>
+    </div>
+  </div>
+  <!-- 3: Primary tag · light -->
+  <div class="card-main light" style="border-color:var(--hairline)">
+    <div class="bg" style="background:#fff">
+      <img src="../assets/logos/logo-primary-tag.png" alt="Doctums" id="i3">
+    </div>
+    <div class="meta">
+      <div class="name">Primary · Dark <span class="tag t-tag">+tagline</span></div>
+      <div class="use">White / Canvas backgrounds</div>
+    </div>
+  </div>
+  <!-- 4: Primary White tag · dark -->
+  <div class="card-main dark">
+    <div class="bg" style="background:var(--doctums-black)">
+      <img src="../assets/logos/logo-mono-white-tag.png" alt="Doctums" id="i4">
+    </div>
+    <div class="meta">
+      <div class="name">Primary · White <span class="tag t-tag" style="color:rgba(255,255,255,.6);background:rgba(255,255,255,.1)">+tagline</span></div>
+      <div class="use">Dark / Cyan / Gradient backgrounds</div>
+    </div>
+  </div>
+</div>
+
+<!-- Extensions -->
+<div class="ext-lbl">Mono & extensions</div>
+<div class="ext-row">
+  <div>
+    <div class="ext-tile" style="background:var(--doctums-black)">
+      <img src="../assets/logos/logo-mono-white.png" alt="" id="i5">
+    </div>
+    <div class="ext-lbl2">Mono white</div>
+  </div>
+  <div>
+    <div class="ext-tile"><img src="../assets/logos/logo-mono-black.png" alt="" id="i6"></div>
+    <div class="ext-lbl2">Mono black</div>
+  </div>
+  <div>
+    <div class="ext-tile"><img src="../assets/logos/logo-services-2lines.svg" alt="" id="i7"></div>
+    <div class="ext-lbl2">Services</div>
+  </div>
+  <div>
+    <div class="ext-tile"><img src="../assets/logos/cobrand-sf.svg" alt="" id="i8"></div>
+    <div class="ext-lbl2">Co-branding SF</div>
+  </div>
+</div>
+
+<!-- Tweaks -->
+<div id="tw">
+  <header><h3>Tweaks</h3><button class="x" id="tw-close">×</button></header>
+  <div class="body">
+    <div>
+      <label>Logo size <span class="val" id="sz-val">44px</span></label>
+      <input type="range" id="tw-sz" min="20" max="72" step="1" value="44">
+    </div>
+    <div>
+      <label>Card height</label>
+      <select id="tw-th">
+        <option value="72px">Compact</option>
+        <option value="96px" selected>Default</option>
+        <option value="120px">Roomy</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<script>
+  const TWEAKS = /*EDITMODE-BEGIN*/{
+    "logoSize": 64,
+    "cardHeight": "96px"
+  }/*EDITMODE-END*/;
+  function apply(t){
+    document.querySelectorAll('img[id^="i"]').forEach(i=>i.style.maxHeight=t.logoSize+'px');
+    document.getElementById('tw-sz').value=t.logoSize;
+    document.getElementById('sz-val').textContent=t.logoSize+'px';
+    document.querySelectorAll('.card-main .bg').forEach(el=>el.style.height=t.cardHeight);
+    document.getElementById('tw-th').value=t.cardHeight;
+  }
+  apply(TWEAKS);
+  function set(k,v){TWEAKS[k]=v;apply(TWEAKS);window.parent.postMessage({type:'__edit_mode_set_keys',edits:{[k]:v}},'*');}
+  document.getElementById('tw-sz').addEventListener('input',e=>set('logoSize',+e.target.value));
+  document.getElementById('tw-th').addEventListener('change',e=>set('cardHeight',e.target.value));
+  window.addEventListener('message',e=>{const d=e.data||{};if(d.type==='__activate_edit_mode')document.getElementById('tw').style.display='block';else if(d.type==='__deactivate_edit_mode')document.getElementById('tw').style.display='none';});
+  document.getElementById('tw-close').addEventListener('click',()=>{document.getElementById('tw').style.display='none';window.parent.postMessage({type:'__edit_mode_dismissed'},'*');});
+  window.parent.postMessage({type:'__edit_mode_available'},'*');
+</script>
+</body></html>
